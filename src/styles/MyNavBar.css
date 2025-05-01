@@ -1,0 +1,77 @@
+/* Conteneur de la navbar */
+.mynavbarContainer {
+    position: fixed;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  background: #FAFAFA;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  border-bottom: rgb(214, 214, 214) 2.5px solid;
+}
+
+/* Image du logo */
+.mynavbarContainer img {
+  width: 98px;
+  margin-top: 12px;
+  margin-left: 10px;
+}
+
+/* Container pour les liens de navigation */
+.myLinks {
+  display: flex;
+  gap: 20px;
+}
+
+/* Style pour les liens de navigation */
+.navLink {
+  background-color: transparent !important;
+  color: #0c3998 !important;
+  box-shadow: none !important;
+  font-weight: 600;
+  padding: 8px 16px !important;
+  transition: all 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: rgba(12, 57, 152, 0.1) !important;
+  transform: translateY(-2px);
+}
+
+/* Bouton stylé */
+.mynavbarContainer button {
+  background-color:#2f2e41;
+  color: white;
+  font-weight:600;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 1000px;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+  box-shadow: 0 4px 0 #090909 ;
+  transition: transform 0.1s ease-in-out;
+}
+
+/* Hover et active */
+.mynavbarContainer button:hover {
+  background-color: #575A89;
+}
+
+.mynavbarContainer button:active {
+  transform: scale(0.97);
+}
+
+
+/* 🔽 Encore plus petit (téléphones) */
+@media screen and (max-width: 351px) {
+  .mynavbarContainer img {
+    width: 100px;
+  }
+
+  .mynavbarContainer button {
+    padding: 11px 22px;
+  }
+}

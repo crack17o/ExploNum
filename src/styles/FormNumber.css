@@ -1,0 +1,496 @@
+/* 🧱 Conteneur principal */
+
+.container-parent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: #F8F9FA;
+}
+.formContainer {
+    position: relative; /* Nécessaire pour positionner le clavier */
+    max-width: 600px;
+    padding: 30px 20px;
+    background: #fafafa;
+    border: 1px solid #d2e3f3;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* Ajouté pour une largeur fluide */
+    
+}
+
+/* ✍️ Présentation */
+.presntation {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.presntation h1 {
+    font-size: 1.8rem;
+    color: #2f2e41;
+    margin-bottom: 8px;
+    animation: slideFadeIn 0.8s ease;
+}
+
+.presntation p {
+    font-size: 1rem;
+    color: #444;
+    line-height: 1.5;
+    animation: fadeIn 1.2s ease;
+}
+
+/* 📩 Formulaire */
+.myForm form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: fadeUp 1s ease;
+}
+
+.myForm input[type="text"],
+.myForm button {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 18px;
+    font-size: 1rem;
+    border-radius: 100px;
+    outline: none;
+    transition: 0.3s ease-in-out;
+}
+
+/* 🔢 Input */
+.myForm input[type="text"] {
+    border: 2px solid  #2f2e41;
+}
+
+.myForm input[type="text"]:focus {
+    border-color: #575A89;
+    background-color: #f0f8ff;
+}
+
+/* 🚀 Bouton */
+.myForm button {
+    background-color: #2f2e41;
+    color: white;
+    font-weight: bold;
+    border: none;
+    box-shadow: 0 3px 0 #090909 ;
+    cursor: pointer;
+    display: flex;
+    font-family:  'Nunito', sans-serif;;
+    justify-content: center;
+    align-items: center;
+}
+
+.myForm button:hover {
+    background-color: #575A89;
+    transform: scale(1.02);
+}
+
+.myForm button:active {
+    transform: scale(0.96);
+}
+
+/* 🌧️ Nombres en chute */
+.falling-numbers {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.falling-numbers span {
+    position: absolute;
+    font-size: 16px;
+    color: #2f2e41;
+    animation: fall linear infinite;
+    opacity: 0.2;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-100px);
+    }
+    100% {
+        transform: translateY(400px);
+    }
+}
+
+/* ✨ Animations */
+@keyframes slideFadeIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeUp {
+    from {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+
+.myLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(circle at center, #f0f4f8, #d9e2ec);
+}
+
+.myLoader-container {
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+.loader-icon {
+  font-size: 80px;
+  color: #3b82f6;
+  animation: spin 2s linear infinite;
+  margin-bottom: 20px;
+}
+
+.myLoader-container h1 {
+  font-size: 1.5rem;
+  color: #1f2937;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+
+
+/*  Loader */
+/* Conteneur général */
+.myLoader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(135deg, #2f2e41a9, #575a89ac);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    padding: 20px;
+  }
+  
+  /* Boîte centrale */
+  .myLoader-box {
+    background: linear-gradient(135deg, #2f2e41, #575A89);
+    border-radius: 20px;
+    padding: 25px 20px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeInUp 1s ease-out;
+    max-width: 90%;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* Icône combinée avec rotation + blink */
+  .loader-icon{
+    color: #575A89;
+  }
+  .loader-icon.spinAndBlink {
+    font-size: 60px;
+    color: #575A89;
+    margin-bottom: 12px;
+    animation: spin 2.5s linear infinite, blinkIcon 1.2s ease-in-out infinite;
+  }
+  
+  /* Texte principal */
+  .analyzing-text {
+    font-size: 1.3rem;
+    color: #ffffff;
+    font-weight: bold;
+    animation: slideIn 1.5s ease-out;
+  }
+  
+  /* Animation des points */
+  .dot-animation {
+    color: #575A89;
+    font-weight: bold;
+    animation: blinkDots 1s steps(1, end) infinite;
+  }
+  
+  /* Sous-texte */
+  .info-progress {
+    font-size: 0.95rem;
+    color: #d6eaff;
+    margin-top: 8px;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+  }
+  
+  /* Animations */
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes blinkIcon {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+  
+  @keyframes blinkDots {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slideIn {
+    0% { transform: translateX(-10px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0.5; }
+    to { opacity: 1; }
+  }
+  
+  /* Responsive */
+  @media (max-width: 726px) {
+    .myLoader-box {
+      max-width: 80%;
+      margin-right: 40px;
+    }
+  }
+  
+  @media (max-width: 427px) {
+    .loader-icon {
+      font-size: 44px;
+    }
+  
+    .myLoader-box h1 {
+      font-size: 1rem;
+    }
+  
+    .myLoader-box {
+      padding: 18px 14px;
+    }
+  
+    .info-progress {
+      font-size: 0.85rem;
+    }
+  }
+  
+/* 📱 Responsivité */
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 20px 15px; /* Réduire la marge */
+        margin-bottom: 20%;
+    }
+}
+@media (max-width: 768px) {
+    .formContainer {
+        padding: 20px 15px; /* Réduire la marge */
+    }
+
+    .presntation h1 {
+        font-size: 1.5rem;
+    }
+
+    .presntation p {
+        font-size: 0.9rem;
+    }
+
+    .myForm input[type="text"],
+    .myForm button {
+        max-width: 90%; /* S'adapte à des écrans plus petits */
+    }
+}
+
+@media (max-width: 670px) {
+    .formContainer {
+       width: 500px;
+       
+    }
+
+    .myForm input[type="text"],
+    .myForm button {
+       
+        margin-bottom:15px; 
+    }
+
+   
+}
+@media (max-width: 562px) {
+    .formContainer {
+       width: 400px;
+  
+    }
+
+   
+   
+}
+
+@media (max-width: 480px) {
+    .presntation h1 {
+        font-size: 1.3rem;
+    }
+
+    .presntation p {
+        font-size: 0.85rem;
+    }
+
+    .myForm input[type="number"],
+    .myForm button {
+       
+        padding: 10px 15px; /* Ajuste le padding */
+    }
+}
+@media (max-width: 438px) {
+    .formContainer {
+       width: 300px;
+  
+    }
+
+   
+   
+}
+@media (max-width: 354px) {
+    .formContainer {
+       width: 280px;
+  
+    }
+
+   
+   
+}
+
+/* Bouton flottant pour le clavier */
+.floating-keyboard-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+.floating-keyboard-button:hover {
+    background-color: var(--primary-color);
+}
+
+/* Clavier personnalisé */
+.custom-keyboard {
+    position: relative;
+    top: 100%; /* Juste en dessous du formulaire */
+    left: 0;
+    width: 100%;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    z-index: 1000;
+    animation: slide-down 0.3s ease;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.custom-keyboard button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    flex: 1; /* Tous les boutons ont la même largeur */
+    margin: 0 4px; /* Espacement entre les boutons */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-keyboard button:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+.custom-keyboard button:active {
+    transform: scale(0.95);
+}
+
+.close-keyboard {
+    background-color: #dc3545;
+    color: white;
+}
+
+.close-keyboard:hover {
+    background-color: #a71d2a;
+}
+
+/* Animation pour le clavier */
+@keyframes slide-down {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

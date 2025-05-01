@@ -1,0 +1,4 @@
+Explo-Math
+Explorateur Numérique Mathématique
+
+Le projet Explorateur Numérique Mathématique a pour objectif de dévelop per une application web interactive permettant aux utilisateurs d’explorer les propriétés mathématiques d’un nombre donné. Par exemple, lorsqu’un utilisateur entre un nombre tel que « 1 », l’application retournera toutes ses caractéristiques : nombre entier, impair, premier, représentation binaire, factorisation, racine carrée, etc. L’expérience utilisateur s’inspirera de l’approche de Visual Mind : une représenta tion graphique arborescente ou en bulles des propriétés mathématiques du nombre saisi, permettant une navigation intuitive et immersive
